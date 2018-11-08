@@ -37,6 +37,14 @@ def host_file():
     except Exception as e:
         return str(e)
 
+@app.route("/play/trumpet.mp3/clear", methods=['GET', 'POST'])
+def clear_record():
+    """
+    clears the requests record.
+    """
+    requests_header_record[:] = []
+    return "request record cleared"
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
